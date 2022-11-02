@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Item>
+
+@{
+    ViewData["Title"] = "ePizza Hub";
+    Layout = "_PublicLayout";
+}
+<div style="background:#1a5ca3;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 text-white" style="width:100%">
+                <div class="pt-5 pb-5">
+                    <h1>ePizza Hub's Online Ordering</h1>
+                    <p class="pb-4">
+                        Yummy pizza delivered fast at your door step!
+                    </p>
+                    <p>
+                        <a href="#heading" class="btn btn-success">ORDER ONLINE NOW</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-4 pt-4">
+                <img src="~/images/pizza-header.png" class="img-fluid" />
+            </div>
+        </div>
+    </div>
+</div>
+@await Component.InvokeAsync("PizzaMenu")

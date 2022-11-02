@@ -1,0 +1,12 @@
+﻿- Blob Storage: Images, Files
+- Redis Cache: Common Data Cache
+- Service Bus: Save User SignUp Details Message
+- Azure SQL: Database
+- WebApp: Deployment
+- Key Vault: Connection Strings
+- Azure Function: Sending Email
+- Application Insight: Monitoring
+- Azure AD: App Registration For Key Vault Access
+- Virtual Machine: Deployment
+
+- CosmosDB: Cart

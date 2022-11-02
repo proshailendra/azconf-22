@@ -1,0 +1,62 @@
+﻿@model IEnumerable<ePizzaHub.Entities.Item>
+
+@{
+    ViewData["Title"] = "Items List";
+}
+
+<div class="col-sm-12">
+    <h2>
+        Items List  <span class="float-right">
+            <a asp-action="Create" class="btn btn-outline-primary">Create New</a>
+        </span>
+    </h2>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnitPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageUrl)
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.UnitPrice)
+                </td>
+                <td>
+                    <img src="@item.ImageUrl" class="w-75" />
+                </td>
+                <td style="width:170px">
+                    <a class="btn btn-outline-info" asp-controller="Item" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    &nbsp;<a class="btn btn-outline-danger" asp-controller="Item" asp-action="Delete" asp-route-id="@item.Id" asp-route-url="@item.ImageUrl" onclick="return confirm('Are you sure to delete?')">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

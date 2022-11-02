@@ -1,0 +1,12 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+    "smtp": "smtp.gmail.com",
+    "email": "your_email@yourdomain.com",
+    "password": "your_password",
+    "port": 587,
+    "ServiceBusConnection": "Endpoint=sb://azureconf.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=IAjmaGzWgFp3osuGBjZRRucToH4Wb56bTKLI2nxcYUI="
+  }
+}

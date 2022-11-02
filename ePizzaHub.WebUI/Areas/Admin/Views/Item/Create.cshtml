@@ -1,0 +1,63 @@
+﻿@model ePizzaHub.WebUI.Models.ItemModel
+
+@{
+    ViewData["Title"] = Model != null ? "Edit" : "Create";
+}
+
+<h2>@ViewData["Title"]</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="@ViewData["Title"]" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label class="control-label">Category</label>
+                <select asp-for="CategoryId" class="form-control" asp-items="@(new SelectList(ViewBag.Categories,"Id","Name"))">
+                    <option value="">--Select--</option>
+                </select>
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Item Type</label>
+                <select asp-for="ItemTypeId" class="form-control" asp-items="@(new SelectList(ViewBag.ItemTypes,"Id","Name"))">
+                    <option value="">--Select--</option>
+                </select>
+                <span asp-validation-for="ItemTypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Unit Price</label>
+                <input type="number" asp-for="UnitPrice" class="form-control" />
+                <span asp-validation-for="UnitPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="File" class="form-control" style="border:none;padding: .375rem 0;" />
+                <span asp-validation-for="File"></span>
+                <br />
+                @if (Model != null && !string.IsNullOrEmpty(Model.ImageUrl))
+                {
+                    <input type="hidden" asp-for="ImageUrl" />
+                    <img id="itemImage" src="@Model.ImageUrl" height="150" width="150" style="border:1px solid" />
+                }
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                &nbsp;&nbsp;  <a asp-action="Index" asp-controller="Item" class="btn btn-warning">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

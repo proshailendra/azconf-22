@@ -1,0 +1,149 @@
+﻿#toastCart {
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+    position: fixed;
+}
+
+.noti_Counter {
+    background-color: #ec5252;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.43;
+    margin: -6px 0 0 5px;
+    padding: 0px 7px;
+    position: absolute;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    padding: 0 !important;
+    word-break: break-all;
+}
+
+.sm-control {
+    width: 50px !important;
+}
+
+/* pagination */
+.pagination > li.disabled {
+    opacity: .5;
+    filter: alpha(opacity=50);
+}
+
+.pagination > li {
+    margin: 0 4px;
+    display: inline-block;
+}
+
+.pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+    color: #fff;
+    background-color: #f54b5b;
+    border-color: #fff;
+    cursor: default;
+}
+
+.pagination > li > a, .pagination > li > span {
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    text-align: center;
+    font-size: 18px;
+    z-index: 1;
+    position: relative;
+    background-color: #2196f3;
+    color: #fff;
+    border: 1px solid #fff;
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+.font-20 {
+    font-size: 20px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: rgb(0 0 0 / 22%) 0 2px 4px 0;
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 20px;
+}
+
+footer {
+    background: #222e3a;
+    color: #e6e4e4;
+    padding: 25px 0;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    body {
+        /* Margin bottom by footer height */
+        margin-bottom: 250px;
+    }
+
+    footer {
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+footer a, footer a:visited {
+    color: #a5c7ec;
+}

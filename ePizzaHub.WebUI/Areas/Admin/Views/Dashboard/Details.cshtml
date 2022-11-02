@@ -1,0 +1,89 @@
+﻿@model ePizzaHub.Repositories.Models.OrderModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Order Details</h2>
+<hr />
+@if (Model != null)
+{
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayName("Order Id")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Total)
+        </dt>
+        <dd class="col-sm-10">
+            ₹@Html.DisplayFor(model => model.GrandTotal)
+        </dd>
+    </dl>
+    <table class="table">
+        <thead>
+            <tr>
+                <th colspan="2">
+                    Item Details
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    UnitPrice
+                </th>
+                <th>
+                    Quantity
+                </th>
+                <th>
+                    Total
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    <td>
+                        <img src="@item.ImageUrl" style="width:200px" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        ₹@Html.DisplayFor(modelItem => item.UnitPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </td>
+                    <td>
+                        ₹@Html.DisplayFor(modelItem => item.Total)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <p>
+        <a asp-action="Index" asp-controller="Dashboard" class="btn btn-outline-primary">Go back</a>
+    </p>
+}
+else
+{
+    <div class="row">
+        <div class="col-sm-12 mt-4">
+            <p style="min-height:300px">
+                There is no order details!
+            </p>
+        </div>
+    </div>
+}

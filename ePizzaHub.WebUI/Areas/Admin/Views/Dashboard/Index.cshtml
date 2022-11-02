@@ -1,0 +1,79 @@
+﻿@model PagingListModel<OrderModel>
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@using X.PagedList.Mvc.Core.Common;
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Order List</h2>
+@if (Model != null && Model.TotalRows > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    PaymentId
+                </th>
+                <th>
+                    Amount
+                </th>
+                <th>
+                    Locality
+                </th>
+                <th>
+                    CreatedDate
+                </th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Data)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PaymentId)
+                    </td>
+                    <td>
+                        ₹@Html.DisplayFor(modelItem => item.GrandTotal)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Locality)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedDate)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Details", "Details", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+            <tr>
+                <td colspan="6" style="padding-bottom: 10px;">
+                    @Html.PagedListPager((IPagedList)Model.Data,
+                            page => Url.Action("Index", new
+                            {
+                                page = page,
+                                pageSize = Model.PageSize
+                             }), PagedListRenderOptions.OnlyShowFivePagesAtATime)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="row">
+        <div class="col-sm-12 mt-4">
+            <p style="min-height:300px">
+                There is no order received!
+            </p>
+        </div>
+    </div>
+}

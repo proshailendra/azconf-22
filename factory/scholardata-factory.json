@@ -1,0 +1,9 @@
+{
+	"name": "scholardata-factory",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "91930031-83fd-45c6-8c6a-504447309330",
+		"tenantId": "d95c2423-fd55-4495-8a6f-0a9283991dca"
+	}
+}
